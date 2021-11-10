@@ -45,9 +45,9 @@ function App() {
               <Register />
             </Route>
 
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Dashboard />
-            </Route>
+            </PrivateRoute>
 
             <Route path="*">
               <NotFound />

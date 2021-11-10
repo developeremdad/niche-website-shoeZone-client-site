@@ -43,10 +43,10 @@ const Dashboard = () => {
             <div style={{ margin: '0' }} className="w-100 row">
                 <div style={{ backgroundColor: '#333333', padding: '0', height: '100vh' }} className="col-lg-2 border-end col-md-2 col-2 text-start">
                     <ul className="dashboard-items">
-                        <li><Link to="/home" className="text-decoration-none text-white">Home</Link></li>
-                        <li><Link to={`${url}/pay`} className="text-decoration-none text-white">Pay</Link></li>
-                        <li><Link to={`${url}/myOrders`} className="text-decoration-none text-white">My Order</Link></li>
-                        <li><Link to={`${url}/addReview`} className="text-decoration-none text-white">Review</Link></li>
+                        <li><Link to="/home" className="text-decoration-none text-white ms-lg-4">Home</Link></li>
+                        <li><Link to={`${url}/pay`} className="text-decoration-none text-white ms-lg-4">Pay</Link></li>
+                        <li><Link to={`${url}/myOrders`} className="text-decoration-none text-white ms-lg-4">My Order</Link></li>
+                        <li><Link to={`${url}/addReview`} className="text-decoration-none text-white ms-lg-4">Review</Link></li>
                         <li id="logOut-item"><button onClick={handleLogOutButton} className="dashboard-logout-list">Log Out</button></li>
                     </ul>
                 </div>
