@@ -28,7 +28,7 @@ const Login = () => {
 
 
     // handle login using login form 
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         const { email, password } = data;
 
@@ -39,7 +39,7 @@ const Login = () => {
     return (
         <div>
             <Header />
-            <div style={{ width: '100%', height: '100vh', backgroundColor: '#f5deb3' }} className="py-4">
+            <div style={{ width: '100%', height: '100vh', backgroundColor: '#a9bd6d' }} className="py-4">
                 <div style={loginBg} className="mx-auto form-container my-3">
                     <h2 className="text-start text-white">Sign In</h2>
                     <p className="text-start text-white">Please fill in this form to create an account!</p>
@@ -47,7 +47,7 @@ const Login = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input className="form-control my-3" type="email" {...register("email")} placeholder="Email" />
                         <input className="form-control my-3" type="password" {...register("password", { required: true })} placeholder="password" />
-                        {/* {errors.password && <span className="text-warning my-1">This field is required</span>} */}
+                        {errors.password && <span className="text-warning my-1">This field is required</span>}
                         <button className="my-2 submit-btn" type="submit">LOG IN  <span><i className="fas fa-sign-in-alt"></i></span></button>
                     </form>
                     <div>

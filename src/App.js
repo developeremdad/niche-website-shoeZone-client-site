@@ -2,12 +2,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './Pages/Context/AuthProvider';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
-import MyOrders from './Pages/Dashboard/MyOrders/MyOrders';
 import About from './Pages/Home/About/About';
+import AllServices from './Pages/Home/AllServices/AllServices';
 import Contact from './Pages/Home/Contact/Contact';
 import Home from './Pages/Home/Home/Home';
 import NotFound from './Pages/Home/NotFound/NotFound';
 import Login from './Pages/Login/Login/Login';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Register from './Pages/Login/Register/Register';
 
 function App() {
@@ -28,9 +29,13 @@ function App() {
               <About />
             </Route>
 
-            <Route path="/contact">
-              <Contact />
+            <Route path="/allServices">
+              <AllServices />
             </Route>
+
+            <PrivateRoute path="/contact">
+              <Contact />
+            </PrivateRoute>
 
             <Route path="/login">
               <Login />
@@ -42,10 +47,6 @@ function App() {
 
             <Route path="/dashboard">
               <Dashboard />
-            </Route>
-
-            <Route path="/myOrders">
-              <MyOrders />
             </Route>
 
             <Route path="*">

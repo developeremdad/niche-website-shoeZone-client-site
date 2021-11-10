@@ -46,7 +46,7 @@ const Register = () => {
     return (
         <div>
             <Header />
-            <div style={{ width: '100%', height: '100vh', backgroundColor: '#f5deb3' }} className="py-4">
+            <div style={{ width: '100%', height: '100vh', backgroundColor: '#a9bd6d' }} className="py-4">
                 <div style={registerBg} className="mx-auto form-container">
                     <h2 className="text-start text-white">Sign Up</h2>
                     <p className="text-start text-white">Please fill in this form to create an account!</p>

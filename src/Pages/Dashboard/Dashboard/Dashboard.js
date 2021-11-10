@@ -1,9 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import { useHistory } from 'react-router';
 import Footer from '../../Shared/Footer/Footer';
+import MyOrders from '../../Dashboard/MyOrders/MyOrders';
 import './Dashboard.css';
+import {
+    Switch,
+    Route,
+    Link,
+    useRouteMatch
+} from "react-router-dom";
+import Pay from '../Pay/Pay';
+import ReviewAdd from '../ReviewAdd/ReviewAdd';
 
 const Dashboard = () => {
     const { user, handleLogOut } = useAuth();
@@ -12,6 +20,7 @@ const Dashboard = () => {
         handleLogOut()
         history.push('/home');
     }
+    let { path, url } = useRouteMatch();
     return (
         <div>
             <div style={{ backgroundColor: '#003452', margin: '0' }} className="w-100 row">
@@ -35,14 +44,27 @@ const Dashboard = () => {
                 <div style={{ backgroundColor: '#333333', padding: '0', height: '100vh' }} className="col-lg-2 border-end col-md-2 col-2 text-start">
                     <ul className="dashboard-items">
                         <li><Link to="/home" className="text-decoration-none text-white">Home</Link></li>
-                        <li><Link to="/" className="text-decoration-none text-white">Pay</Link></li>
-                        <li><Link to="/myOrders" className="text-decoration-none text-white">My Order</Link></li>
-                        <li><Link to="/" className="text-decoration-none text-white">Review</Link></li>
+                        <li><Link to={`${url}/pay`} className="text-decoration-none text-white">Pay</Link></li>
+                        <li><Link to={`${url}/myOrders`} className="text-decoration-none text-white">My Order</Link></li>
+                        <li><Link to={`${url}/addReview`} className="text-decoration-none text-white">Review</Link></li>
                         <li id="logOut-item"><button onClick={handleLogOutButton} className="dashboard-logout-list">Log Out</button></li>
                     </ul>
                 </div>
                 <div style={{ backgroundColor: '#ddd', height: '100vh' }} className="col-lg-10 col-md-10 col-10 text-start">
-                    <h1 className="text-center text-white">Container for Display</h1>
+                    <Switch>
+                        <Route exact path={path}>
+                            <h1>This is Dashboard</h1>
+                        </Route>
+                        <Route path={`${path}/pay`}>
+                            <Pay />
+                        </Route>
+                        <Route path={`${path}/myOrders`}>
+                            <MyOrders />
+                        </Route>
+                        <Route path={`${path}/addReview`}>
+                            <ReviewAdd />
+                        </Route>
+                    </Switch>
                 </div>
             </div>
 

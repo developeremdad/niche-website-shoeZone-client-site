@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-// import useAuth from '../../../Hooks/useAuth';
 import useAuth from '../../Hooks/useAuth';
 
 const Header = () => {
@@ -12,26 +11,20 @@ const Header = () => {
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <NavLink className="navbar-brand text-primary me-5 fs-4 fw-bold" to="/home">BLUE SKY TOURISM</NavLink>
+                    <NavLink style={{ backgroundColor: '#87b106', color: '#fff', padding: '10px 15px' }} className="navbar-brand me-5 fs-4 fw-bold" to="/home">SHOE ZONE</NavLink>
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
                                 <NavLink className="nav-link active text-dark fw-bold" aria-current="page" to="/home">Home</NavLink>
                             </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link active text-dark fw-bold" aria-current="page" to="/allServices">Services</NavLink>
+                            </li>
                             {
                                 user.email && <li className="nav-item">
-                                    <NavLink className="nav-link text-dark fw-bold" to="/myOrders">My Orders</NavLink>
+                                    <NavLink className="nav-link text-dark fw-bold" to="/dashboard">Dashboard</NavLink>
                                 </li>
                             }
-                            <li className="nav-item">
-                                <NavLink className="nav-link text-dark fw-bold" to="/manages">Manages All</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link text-dark fw-bold" to="/addService">Add Service</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link text-dark fw-bold" to="/dashboard">Dashboard</NavLink>
-                            </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link text-dark fw-bold" to="/contact">Contact</NavLink>
                             </li>
