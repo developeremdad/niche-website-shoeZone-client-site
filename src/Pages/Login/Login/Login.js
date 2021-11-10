@@ -8,6 +8,7 @@ import Header from '../../Shared/Header/Header';
 import Footer from '../../Shared/Footer/Footer';
 import bg from '../../../images/loginBg.jpg';
 
+// login page background 
 const loginBg = {
     background: `url(${bg})`,
     backgroundColor: 'rgba(0, 0, 0, 0.50)',
@@ -45,9 +46,10 @@ const Login = () => {
                     <p className="text-start text-white">Please fill in this form to create an account!</p>
                     <hr className="border" />
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <input className="form-control my-3" type="email" {...register("email")} placeholder="Email" />
+                        <input className="form-control my-3" type="email" {...register("email", { required: true })} placeholder="Email" />
+                        {errors.password && <span className="text-warning d-block text-start my-1">This field is required</span>}
                         <input className="form-control my-3" type="password" {...register("password", { required: true })} placeholder="password" />
-                        {errors.password && <span className="text-warning my-1">This field is required</span>}
+                        {errors.password && <span className="text-warning d-block text-start my-1">This field is required</span>}
                         <button className="my-2 submit-btn" type="submit">LOG IN  <span><i className="fas fa-sign-in-alt"></i></span></button>
                     </form>
                     <div>

@@ -1,15 +1,14 @@
 .dashboard-items{
     list-style: none;
     border-top: 1px solid #ddd;
-    /* text-align: center; */
     font-size: 20px;
     padding: 0;
 }
 .dashboard-items li{
-    background-color: #333333;
+    background-color: #292929;
     border-bottom: 3px solid #333333;
     padding: 20px 5px;
-    /* transition: .2s; */
+    transition: .2s;
 }
 .dashboard-items li:hover{
     border-bottom: 3px solid #fff;

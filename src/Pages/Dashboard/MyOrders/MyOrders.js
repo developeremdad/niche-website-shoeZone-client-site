@@ -25,7 +25,7 @@ const MyOrders = () => {
                 <img className="img-fluid" src={myOrderCover} alt="" />
             </div> */}
             <div className="bg-light py-5 my-4">
-                <div className="container mx-auto row g-4">
+                <div className=" mx-auto row g-4">
                     {
                         orders.length
                             ?
