@@ -15,7 +15,7 @@ const useFirebase = () => {
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
-    // log in with google 
+    // log in with google provider
     const handleGoogleLogin = (location, history) => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
