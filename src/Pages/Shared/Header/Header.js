@@ -29,7 +29,7 @@ const Header = () => {
                                 <NavLink className="nav-link active text-dark fw-bold" aria-current="page" to="/home">Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link active text-dark fw-bold" aria-current="page" to="/allServices">Services</NavLink>
+                                <NavLink className="nav-link active text-dark fw-bold" aria-current="page" to="/allProducts">Products</NavLink>
                             </li>
                             {
                                 user.email && <li className="nav-item">

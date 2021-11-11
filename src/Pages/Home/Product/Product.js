@@ -1,9 +1,9 @@
 import React from 'react';
 import { Card, Col, Button } from 'react-bootstrap';
-// import img from '../../../images/login.webp';
+import { Link } from 'react-router-dom';
 
-const Service = (props) => {
-    const { name, img, description, price } = props.service;
+const Product = (props) => {
+    const { name, img, description, _id, price } = props.service;
     return (
         <Col>
             <Card>
@@ -16,12 +16,11 @@ const Service = (props) => {
                         </div>
                     </Card.Title>
                     <Card.Text>{description.split(' ').slice(0, 10).toString().replace(/,/g, ' ')} <span className="text-warning">read more</span></Card.Text>
-                    {/* <Link to={`/details/${_id}`}> <Button className="w-100">Tour in {place}</Button></Link> */}
-                    <Button className="w-100">Book Now</Button>
+                    <Link to={`/details/${_id}`}> <Button className="w-100">Book Now</Button></Link>
                 </Card.Body>
             </Card>
         </Col>
     );
 };
 
-export default Service;
+export default Product;

@@ -3,8 +3,9 @@ import './App.css';
 import AuthProvider from './Pages/Context/AuthProvider';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import About from './Pages/Home/About/About';
-import AllServices from './Pages/Home/AllServices/AllServices';
+import AllProducts from './Pages/Home/AllProducts/AllProducts';
 import Contact from './Pages/Home/Contact/Contact';
+import DetailsProduct from './Pages/Home/DetailsProduct/DetailsProduct';
 import Home from './Pages/Home/Home/Home';
 import NotFound from './Pages/Home/NotFound/NotFound';
 import Login from './Pages/Login/Login/Login';
@@ -29,13 +30,13 @@ function App() {
               <About />
             </Route>
 
-            <Route path="/allServices">
-              <AllServices />
+            <Route path="/allProducts">
+              <AllProducts />
             </Route>
 
-            <PrivateRoute path="/contact">
+            <Route path="/contact">
               <Contact />
-            </PrivateRoute>
+            </Route>
 
             <Route path="/login">
               <Login />
@@ -47,6 +48,10 @@ function App() {
 
             <PrivateRoute path="/dashboard">
               <Dashboard />
+            </PrivateRoute>
+
+            <PrivateRoute path="/details/:productId">
+              <DetailsProduct />
             </PrivateRoute>
 
             <Route path="*">

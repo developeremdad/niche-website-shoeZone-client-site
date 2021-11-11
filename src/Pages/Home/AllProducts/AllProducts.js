@@ -1,16 +1,16 @@
 import React from 'react';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
-import Services from '../Services/Services';
+import Products from '../Products/Products';
 
-const AllServices = () => {
+const AllProducts = () => {
     return (
         <div>
             <Header />
-            <Services />
+            <Products />
             <Footer />
         </div>
     );
 };
 
-export default AllServices;
+export default AllProducts;

@@ -14,29 +14,31 @@ const formBg = {
 const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        axios.post('https://sheltered-falls-76719.herokuapp.com/services', data)
+        axios.post('http://localhost:5000/services', data)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('Successfully inserted');
+                    alert('Product Successfully inserted');
                     reset();
                 }
             })
     }
     return (
         <div>
-            {/* <div className="add-service-banner">
-                    <img className="w-100" src={addServiceBanner} alt="" />
-                    <h1 className="bg-dark text-white text-center py-3">Add New Service</h1>
-                </div> */}
-
             <div style={formBg} className="mx-auto form-container my-4">
+                <h2 className="text-start text-warning">Add Product</h2>
+                <p className="text-start text-white">Please fill in this form to insert a new Product!</p>
+                <hr className="border" />
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input className="form-control my-3" {...register("name")} required placeholder="Name" />
-                    <input className="form-control my-3" {...register("place")} required placeholder="Place" />
                     <input className="form-control my-3" type="number" {...register("price")} required placeholder="Price" />
                     <textarea className="form-control my-3" {...register("description")} required placeholder="Description" />
                     <input className="form-control my-3" {...register("img")} required placeholder="Link Url" />
-                    {/* <input className="form-control my-2" type="submit" /> */}
+                    <select className="form-control my-3" {...register("rating", { required: true })}>
+                        <option value="5">Rating 5 (Default)</option>
+                        <option value="4">Rating 4</option>
+                        <option value="3">Rating 3</option>
+                        <option value="2">Rating 2</option>
+                    </select>
                     <button className="btn btn-primary w-100" type="submit"><span><i className="fas fa-cart-plus"></i></span> Add Service</button>
                 </form>
             </div>
