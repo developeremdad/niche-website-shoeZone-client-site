@@ -16,10 +16,10 @@ const ReviewAdd = () => {
     const { displayName, email } = user;
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        axios.post('https://localhost:5000/review', data)
+        axios.post('http://localhost:5000/reviews', data)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('Order Successfully Added');
+                    alert('Review Successfully Added');
                     reset();
                 }
             })
@@ -36,10 +36,10 @@ const ReviewAdd = () => {
                         <input className="form-control my-3" type="email" value={email} {...register("userEmail")} required />
                         <textarea className="form-control my-3" {...register("review", { required: true })} required placeholder="Please write something" />
                         <select className="form-control my-3" {...register("rating", { required: true })}>
-                            <option value="Rating 5">Rating 5 (Default)</option>
-                            <option value="Rating 4">Rating 4</option>
-                            <option value="Rating 3">Rating 3</option>
-                            <option value="Rating 2">Rating 2</option>
+                            <option value="5">Rating 5 (Default)</option>
+                            <option value="4">Rating 4</option>
+                            <option value="3">Rating 3</option>
+                            <option value="2">Rating 2</option>
                         </select>
 
                         <button className="btn btn-primary w-100" type="submit"><span><i className="fas fa-cart-plus"></i></span> Review Now</button>

@@ -1,3 +1,4 @@
+import axios from "axios";
 import { GoogleAuthProvider, getAuth, signInWithPopup, signOut, onAuthStateChanged, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword } from "firebase/auth";
 import { useEffect, useState } from "react";
 // import initializeAuthentication from "../Login/Firebase/firebase.init";
@@ -40,7 +41,6 @@ const useFirebase = () => {
                 setUser(result.user);
                 const newUser = { email, displayName: name };
                 setUser(newUser);
-
                 // update user when successfully created an account
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -49,6 +49,8 @@ const useFirebase = () => {
                     setError(error.message);
                 });
                 history.replace('/');
+                // store user to database 
+                handleStoreUserData(result?.user?.displayName, result?.user?.email);
             })
             .catch((error) => {
                 setError(error.message);
@@ -65,6 +67,7 @@ const useFirebase = () => {
             .then((result) => {
                 setUser(result.user);
                 const redirect_url = location?.state?.from || '/';
+                handleLoginUserStore(result.user.displayName, result.user.email);
                 history.push(redirect_url);
                 setError('');
             })
@@ -98,6 +101,38 @@ const useFirebase = () => {
         });
         return () => unsubscribed;
     }, [auth])
+
+
+    //store user data to server (mongoDb)
+    const handleStoreUserData = (name, email) => {
+        const userInfo = { name, email };
+        console.log(userInfo);
+        axios.post('http://localhost:5000/users', userInfo)
+            .then(res => {
+                if (res.data.insertedId) {
+                    // alert('User Successfully store');
+                }
+            })
+    }
+
+    const handleLoginUserStore = (name, email) => {
+        const userInfo = { name, email };
+        fetch('http://localhost:5000/users', {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(userInfo)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    // console.log(data);
+                    // alert('New user Added');
+                }
+            })
+    }
+
 
     return {
         handleGoogleLogin,

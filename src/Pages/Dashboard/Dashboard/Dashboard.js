@@ -1,7 +1,6 @@
 import React from 'react';
 import useAuth from '../../Hooks/useAuth';
 import { useHistory } from 'react-router';
-import Footer from '../../Shared/Footer/Footer';
 import MyOrders from '../../Dashboard/MyOrders/MyOrders';
 import './Dashboard.css';
 import {
@@ -12,6 +11,10 @@ import {
 } from "react-router-dom";
 import Pay from '../Pay/Pay';
 import ReviewAdd from '../ReviewAdd/ReviewAdd';
+import ManageOrders from '../Admin/ManageOrders/ManageOrders';
+import ManageProducts from '../Admin/ManageProducts/ManageProducts';
+import AddProduct from '../Admin/AddProduct/AddProduct';
+import MakeAdmin from '../Admin/MakeAdmin/MakeAdmin';
 
 const Dashboard = () => {
     const { user, handleLogOut } = useAuth();
@@ -47,6 +50,10 @@ const Dashboard = () => {
                         <li><Link to={`${url}/pay`} className="text-decoration-none text-white ms-lg-4">Pay</Link></li>
                         <li><Link to={`${url}/myOrders`} className="text-decoration-none text-white ms-lg-4">My Order</Link></li>
                         <li><Link to={`${url}/addReview`} className="text-decoration-none text-white ms-lg-4">Review</Link></li>
+                        <li><Link to={`${url}/manageOrders`} className="text-decoration-none text-white ms-lg-4">Manage Orders</Link></li>
+                        <li><Link to={`${url}/manageProducts`} className="text-decoration-none text-white ms-lg-4">Manage Products</Link></li>
+                        <li><Link to={`${url}/addProduct`} className="text-decoration-none text-white ms-lg-4">Add Product</Link></li>
+                        <li><Link to={`${url}/makeAdmin`} className="text-decoration-none text-white ms-lg-4">Make Admin</Link></li>
                         <li id="logOut-item"><button onClick={handleLogOutButton} className="dashboard-logout-list">Log Out</button></li>
                     </ul>
                 </div>
@@ -64,11 +71,23 @@ const Dashboard = () => {
                         <Route path={`${path}/addReview`}>
                             <ReviewAdd />
                         </Route>
+                        <Route path={`${path}/manageOrders`}>
+                            <ManageOrders />
+                        </Route>
+                        <Route path={`${path}/manageProducts`}>
+                            <ManageProducts />
+                        </Route>
+                        <Route path={`${path}/addProduct`}>
+                            <AddProduct />
+                        </Route>
+                        <Route path={`${path}/makeAdmin`}>
+                            <MakeAdmin />
+                        </Route>
                     </Switch>
                 </div>
             </div>
 
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </div>
     );
 };
