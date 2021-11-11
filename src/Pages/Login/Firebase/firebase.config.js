@@ -6,12 +6,12 @@ const firebaseConfig = {
     // messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
     // appId: process.env.REACT_APP_APP_ID,
 
-    apiKey: "AIzaSyCGcruxNVINHzViMqNpj6njX8DnZNlnx3w",
-    authDomain: "tourism-101.firebaseapp.com",
-    projectId: "tourism-101",
-    storageBucket: "tourism-101.appspot.com",
-    messagingSenderId: "244782123256",
-    appId: "1:244782123256:web:cb1d45bbfdf8700ef4530d",
+    apiKey: "AIzaSyA8-bgeUikH1e-JqP2sPUtyHwtTtJV6Lbk",
+    authDomain: "shoezone-101.firebaseapp.com",
+    projectId: "shoezone-101",
+    storageBucket: "shoezone-101.appspot.com",
+    messagingSenderId: "477713986730",
+    appId: "1:477713986730:web:b099f0473ce5563d180cd3"
 };
 
 export default firebaseConfig;

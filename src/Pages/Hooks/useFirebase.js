@@ -21,6 +21,7 @@ const useFirebase = () => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then((result) => {
+                handleLoginUserStore(result?.user?.displayName, result?.user?.email);
                 setUser(result.user);
                 const redirect_url = location?.state?.from || '/';
                 history.replace(redirect_url);
@@ -45,12 +46,12 @@ const useFirebase = () => {
                 updateProfile(auth.currentUser, {
                     displayName: name
                 }).then(() => {
+                    handleStoreUserData(result?.user?.displayName, result?.user?.email);
                 }).catch((error) => {
                     setError(error.message);
                 });
                 history.replace('/');
                 // store user to database 
-                handleStoreUserData(result?.user?.displayName, result?.user?.email);
             })
             .catch((error) => {
                 setError(error.message);
@@ -115,6 +116,7 @@ const useFirebase = () => {
             })
     }
 
+    // handle store user login or google login data 
     const handleLoginUserStore = (name, email) => {
         const userInfo = { name, email };
         fetch('http://localhost:5000/users', {

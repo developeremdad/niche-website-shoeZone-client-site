@@ -15,6 +15,7 @@ import ManageOrders from '../Admin/ManageOrders/ManageOrders';
 import ManageProducts from '../Admin/ManageProducts/ManageProducts';
 import AddProduct from '../Admin/AddProduct/AddProduct';
 import MakeAdmin from '../Admin/MakeAdmin/MakeAdmin';
+import Footer from '../../Shared/Footer/Footer';
 
 const Dashboard = () => {
     const { user, handleLogOut } = useAuth();
@@ -43,8 +44,10 @@ const Dashboard = () => {
                     <h1 className="text-center text-white">User Dashboard</h1>
                 </div>
             </div>
+
+            {/* dashboard side bar menu  */}
             <div style={{ margin: '0' }} className="w-100 row">
-                <div style={{ backgroundColor: '#333333', padding: '0', height: '100vh' }} className="col-lg-2 border-end col-md-2 col-2 text-start">
+                <div style={{ backgroundColor: '#333333', padding: '0' }} className="col-lg-2 border-end col-md-2 col-2 text-start">
                     <ul className="dashboard-items">
                         <li><Link to="/home" className="text-decoration-none text-white ms-lg-4">Home</Link></li>
                         <li><Link to={`${url}/pay`} className="text-decoration-none text-white ms-lg-4">Pay</Link></li>
@@ -57,7 +60,7 @@ const Dashboard = () => {
                         <li id="logOut-item"><button onClick={handleLogOutButton} className="dashboard-logout-list">Log Out</button></li>
                     </ul>
                 </div>
-                <div style={{ backgroundColor: '#ddd', height: '100vh' }} className="col-lg-10 col-md-10 col-10 text-start">
+                <div style={{ backgroundColor: '#fff' }} className="col-lg-10 col-md-10 col-10 text-start">
                     <Switch>
                         <Route exact path={path}>
                             <h1>This is Dashboard</h1>
@@ -87,7 +90,7 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            {/* <Footer></Footer> */}
+            <Footer></Footer>
         </div>
     );
 };

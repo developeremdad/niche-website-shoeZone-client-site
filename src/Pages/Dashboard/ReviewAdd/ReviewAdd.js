@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import useAuth from '../../Hooks/useAuth';
 import bg from '../../../images/loginBg.jpg';
 
-// background
+// background image
 const reviewBg = {
     background: `url(${bg})`,
     backgroundColor: 'rgba(0, 0, 0, 0.60)',
@@ -42,7 +42,7 @@ const ReviewAdd = () => {
                             <option value="2">Rating 2</option>
                         </select>
 
-                        <button className="btn btn-primary w-100" type="submit"><span><i className="fas fa-cart-plus"></i></span> Review Now</button>
+                        <button className="btn btn-primary w-100" type="submit">Review Now</button>
                     </form>
                 </div>
             </div>
