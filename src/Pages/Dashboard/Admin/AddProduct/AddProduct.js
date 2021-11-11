@@ -14,7 +14,7 @@ const formBg = {
 const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        axios.post('http://localhost:5000/services', data)
+        axios.post('http://localhost:5000/products', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Product Successfully inserted');

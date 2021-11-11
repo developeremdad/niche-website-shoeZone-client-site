@@ -1,13 +1,16 @@
 import React from 'react';
 import { Card, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import ReactStars from 'react-stars'
 
 const Product = (props) => {
-    const { name, img, description, _id, price } = props.service;
+    const { name, img, description, _id, price, rating } = props.service;
     return (
         <Col>
             <Card>
-                <Card.Img variant="top" src={img} />
+                <div className="overflow-hidden">
+                    <Card.Img className="img-style" variant="top" src={img} />
+                </div>
                 <Card.Body>
                     <Card.Title>
                         <div className="d-flex justify-content-between">
@@ -15,7 +18,15 @@ const Product = (props) => {
                             <h5 className="text-danger">$ {price}</h5>
                         </div>
                     </Card.Title>
-                    <Card.Text>{description.split(' ').slice(0, 10).toString().replace(/,/g, ' ')} <span className="text-warning">read more</span></Card.Text>
+                    <Card.Text><p className="text-start">{description.split(' ').slice(0, 10).toString().replace(/,/g, ' ')} <span className="text-primary">read more</span></p></Card.Text>
+                    <Card.Text>
+                        {<ReactStars
+                            count={5}
+                            value={parseInt(rating)}
+                            size={28}
+                            color2={'#ffd700'} />
+                        }
+                    </Card.Text>
                     <Link to={`/details/${_id}`}> <Button className="w-100">Book Now</Button></Link>
                 </Card.Body>
             </Card>

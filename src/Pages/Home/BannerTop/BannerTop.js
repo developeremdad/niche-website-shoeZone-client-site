@@ -5,7 +5,7 @@ import './BannerTop.css';
 const BannerTop = () => {
     const history = useHistory()
     const handleRedirect = () => {
-        history.push('/allServices');
+        history.push('/allproducts');
     }
     return (
         <div>

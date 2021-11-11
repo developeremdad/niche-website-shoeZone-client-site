@@ -10,7 +10,7 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([]);
     const [isDeleted, setIsDeleted] = useState(false);
     useEffect(() => {
-        const url = `https://sheltered-falls-76719.herokuapp.com/orders/${user.email}`;
+        const url = `http://localhost:5000/orders${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setOrders(data))
