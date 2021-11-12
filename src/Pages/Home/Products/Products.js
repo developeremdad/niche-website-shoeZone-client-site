@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Row, Spinner } from 'react-bootstrap';
 import Product from '../Product/Product';
 
-const Services = () => {
-    const [services, setServices] = useState([]);
+const Products = () => {
+    const [products, setProducts] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/products')
             .then(res => res.json())
-            .then(data => setServices(data))
+            .then(data => setProducts(data))
     }, [])
     return (
         <div>
@@ -19,10 +19,10 @@ const Services = () => {
             <div className="container">
                 <Row xs={1} sm={2} md={2} lg={3} className="g-4">
                     {
-                        services.length ?
-                            services.map(service => <Product
-                                key={service._id}
-                                service={service}
+                        products.length ?
+                            products.slice(0, 6).map(product => <Product
+                                key={product._id}
+                                product={product}
                             />)
                             :
                             <div className="text-center mt-3 mx-auto mt-5"><Spinner animation="border" variant="danger" /></div>
@@ -33,4 +33,4 @@ const Services = () => {
     );
 };
 
-export default Services;
+export default Products;

@@ -1,0 +1,25 @@
+.manage-container{
+    background-color: #ffff;
+    margin: 15px 0;
+}
+.update-btn{
+    border: none;
+    background-color: rgb(167, 167, 228);
+    color: black;
+    font-weight: bold;
+    margin-right: 15px;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+.update-btn:hover{
+    background-color: rgb(186, 186, 229);
+}
+
+.delete-btn{
+    border: 1px solid black;
+    color: tomato;
+}
+.delete-btn:hover{
+    border: 1px solid red;
+    color: black;
+}

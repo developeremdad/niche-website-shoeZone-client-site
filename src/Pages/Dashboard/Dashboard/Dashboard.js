@@ -60,7 +60,7 @@ const Dashboard = () => {
                         <li id="logOut-item"><button onClick={handleLogOutButton} className="dashboard-logout-list">Log Out</button></li>
                     </ul>
                 </div>
-                <div style={{ backgroundColor: '#fff' }} className="col-lg-10 col-md-10 col-10 text-start">
+                <div className="col-lg-10 col-md-10 col-10 bg-light text-start">
                     <Switch>
                         <Route exact path={path}>
                             <h1>This is Dashboard</h1>

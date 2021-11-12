@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import ReactStars from 'react-stars';
 
 const Product = (props) => {
-    const { name, img, description, _id, price, rating } = props.service;
+    const { name, img, description, _id, price, rating } = props.product;
     return (
         <Col>
             <Card>

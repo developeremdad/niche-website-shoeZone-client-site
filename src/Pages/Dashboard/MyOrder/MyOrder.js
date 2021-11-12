@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react';
 
 const MyOrder = (props) => {
-    const { name, img, price, _id } = props.order;
+    const { name, img, price, _id, status } = props.order;
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch('https://sheltered-falls-76719.herokuapp.com/orders')
+        fetch('http://localhost:5000/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
 
-
+    // handle delete or cencel order fuction 
     const handleCancelOrder = id => {
+        props.handleCheckIsDelted(false);
         const proceed = window.confirm('Are you sure! You want to Cancel and  Delete?');
         if (proceed) {
-            const url = `https://sheltered-falls-76719.herokuapp.com/orders/${id}`;
+            const url = `http://localhost:5000/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('Deleted Successfully Complete');
                         const restOrders = orders.filter(order => order._id !== id);
                         setOrders(restOrders);
                         props.handleCheckIsDelted();
@@ -32,14 +32,14 @@ const MyOrder = (props) => {
     return (
 
         <div className="col-lg-6 col-md-6 col-12">
-            <div className="bg-white d-flex flex-lg-row flex-column">
+            <div className="bg-white d-flex flex-lg-row flex-column border ">
                 <div className="col-lg-3 col-12">
-                    <img className="img-fluid" src={img} alt="" />
+                    <img className="img-fluid h-100" src={img} alt="" />
                 </div>
                 <div className="col-lg-9 col-md-9 col-12 row">
                     <div className="col-9 ps-4 pt-2 border-end border-2">
                         <b><p>{name}</p></b>
-                        {/* <p>{order?.place}</p> */}
+                        <p><span className="text-light p-1 rounded bg-success">Status</span> {status}</p>
                         <p className="text-danger">${price}</p>
                     </div>
                     <div className="col-3 cancel-order d-flex align-items-center justify-content-center">

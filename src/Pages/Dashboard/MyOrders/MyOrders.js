@@ -3,27 +3,27 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import useAuth from '../../Hooks/useAuth';
 import MyOrder from '../MyOrder/MyOrder';
-// import myOrderCover from '../../../images/my-order-cover.png';
 
 const MyOrders = () => {
     const { user } = useAuth();
     const [orders, setOrders] = useState([]);
     const [isDeleted, setIsDeleted] = useState(false);
+
+    // get user orders 
     useEffect(() => {
-        const url = `http://localhost:5000/orders${user.email}`;
+        const url = `http://localhost:5000/orders/${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [isDeleted, user.email])
+
+    // handle deleted function update 
     const handleCheckIsDelted = () => {
         setIsDeleted(true);
     }
 
     return (
         <div>
-            {/* <div className="bg-white px-5 py-3">
-                <img className="img-fluid" src={myOrderCover} alt="" />
-            </div> */}
             <div className="bg-light py-5 my-4">
                 <div className=" mx-auto row g-4">
                     {

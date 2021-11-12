@@ -39,7 +39,7 @@ const AddProduct = () => {
                         <option value="3">Rating 3</option>
                         <option value="2">Rating 2</option>
                     </select>
-                    <button className="btn btn-primary w-100" type="submit"><span><i className="fas fa-cart-plus"></i></span> Add Service</button>
+                    <button className="btn btn-primary w-100" type="submit"><span><i className="fas fa-cart-plus"></i></span> Add Product</button>
                 </form>
             </div>
         </div>
