@@ -16,7 +16,7 @@ const ManageProducts = () => {
         setIsDeleted(false);
         const proceed = window.confirm('Are you sure! You want to Cancel and  Delete?');
         if (proceed) {
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://infinite-escarpment-16645.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
