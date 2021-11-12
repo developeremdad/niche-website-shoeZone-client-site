@@ -1,25 +1,31 @@
 .manage-container{
     background-color: #ffff;
     margin: 15px 0;
+    transition: .5s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.manage-container:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .update-btn{
     border: none;
-    background-color: rgb(167, 167, 228);
-    color: black;
+    background-color: #87b106;
+    color: white;
     font-weight: bold;
     margin-right: 15px;
     padding: 5px 20px;
     border-radius: 5px;
+    transition: .4s;
 }
 .update-btn:hover{
-    background-color: rgb(186, 186, 229);
+    background-color: #6b8d04;
 }
 
 .delete-btn{
-    border: 1px solid black;
-    color: tomato;
+    border: 1px solid tomato;
+    color: black;
 }
 .delete-btn:hover{
-    border: 1px solid red;
-    color: black;
+    border: 1px solid black;
+    color: tomato;
 }

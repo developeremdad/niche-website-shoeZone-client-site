@@ -24,7 +24,7 @@ const MyOrder = (props) => {
                     if (data.deletedCount > 0) {
                         const restOrders = orders.filter(order => order._id !== id);
                         setOrders(restOrders);
-                        props.handleCheckIsDelted();
+                        props.handleCheckIsDelted(true);
                     }
                 });
         }
@@ -39,7 +39,7 @@ const MyOrder = (props) => {
                 <div className="col-lg-9 col-md-9 col-12 row">
                     <div className="col-9 ps-4 pt-2 border-end border-2">
                         <b><p>{name}</p></b>
-                        <p><span className="text-light p-1 rounded bg-success">Status</span> {status}</p>
+                        <p><span className="text-light px-2 py-1 fw-bold rounded bg-success">{status}</span> </p>
                         <p className="text-danger">${price}</p>
                     </div>
                     <div className="col-3 cancel-order d-flex align-items-center justify-content-center">

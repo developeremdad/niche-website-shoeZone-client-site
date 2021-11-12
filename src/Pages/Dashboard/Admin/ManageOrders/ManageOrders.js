@@ -59,9 +59,9 @@ const ManageOrders = () => {
                     orders.length
                         ?
                         orders.map(order => (
-                            <div className="container mx-auto row manage-container py-3 shadow">
+                            <div className="container mx-auto row manage-container py-3 ">
                                 <div className="col-lg-5 col-md-5 col-12">
-                                    <p className="text-primary fs-5"><span><i className="fas fa-plane-departure me-2 text-dark"></i></span>{order?.name}</p>
+                                    <p className="text-primary fs-5"><span><i className="fas fa-tag me-2 text-dark"></i></span>{order?.name}</p>
                                     <p><span><i className="fas fa-envelope me-2"></i></span>{order?.email}</p>
                                 </div>
                                 <div className="col-lg-4 col-md-4 col-12">
@@ -70,7 +70,7 @@ const ManageOrders = () => {
                                 </div>
                                 <div className="col-lg-3 col-md-3 col-12 d-flex align-items-center">
                                     <button className="update-btn" onClick={() => handleUpdateStatus(order?._id)}>{order?.status}</button>
-                                    <button className="delete-btn" onClick={() => handleCancelOrder(order?._id)}><span><i className="fas fa-times"></i></span></button>
+                                    <button className="delete-btn" onClick={() => handleCancelOrder(order?._id)}><span><i className="fas fa-trash-alt"></i></span></button>
                                 </div>
                             </div >
                         ))

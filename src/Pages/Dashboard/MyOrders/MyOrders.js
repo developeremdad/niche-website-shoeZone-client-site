@@ -18,8 +18,8 @@ const MyOrders = () => {
     }, [isDeleted, user.email])
 
     // handle deleted function update 
-    const handleCheckIsDelted = () => {
-        setIsDeleted(true);
+    const handleCheckIsDelted = (event) => {
+        setIsDeleted(event);
     }
 
     return (
