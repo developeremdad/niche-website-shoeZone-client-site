@@ -11,7 +11,7 @@ const MyOrders = () => {
 
     // get user orders 
     useEffect(() => {
-        const url = `http://localhost:5000/orders/${user.email}`;
+        const url = `https://infinite-escarpment-16645.herokuapp.com/orders/${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setOrders(data))

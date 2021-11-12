@@ -108,7 +108,7 @@ const useFirebase = () => {
     const handleStoreUserData = (name, email) => {
         const userInfo = { name, email };
         console.log(userInfo);
-        axios.post('http://localhost:5000/users', userInfo)
+        axios.post('https://infinite-escarpment-16645.herokuapp.com/users', userInfo)
             .then(res => {
                 if (res.data.insertedId) {
                     // alert('User Successfully store');
@@ -119,7 +119,7 @@ const useFirebase = () => {
     // handle store user login or google login data 
     const handleLoginUserStore = (name, email) => {
         const userInfo = { name, email };
-        fetch('http://localhost:5000/users', {
+        fetch('https://infinite-escarpment-16645.herokuapp.com/users', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -13,7 +13,7 @@ const MakeAdmin = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         data.role = 'admin';
-        fetch('http://localhost:5000/makeAdmin', {
+        fetch('https://infinite-escarpment-16645.herokuapp.com/makeAdmin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

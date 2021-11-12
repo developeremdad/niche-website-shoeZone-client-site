@@ -5,15 +5,15 @@ import Product from '../Product/Product';
 const Products = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://infinite-escarpment-16645.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
     return (
         <div>
             <div className="container py-4 text-center my-4">
-                <h1 className="text-danger">FEATURED TOURS</h1>
-                <p>Find your next tour</p>
+                <h1 className="text-danger">FEATURED PRODUCTS</h1>
+                <p>Find your next product</p>
             </div>
 
             <div className="container">

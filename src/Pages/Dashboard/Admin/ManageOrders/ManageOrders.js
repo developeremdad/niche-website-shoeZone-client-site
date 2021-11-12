@@ -6,7 +6,7 @@ const ManageOrders = () => {
     const [isDeleted, setIsDeleted] = useState(false);
     const [isUpdate, setIsUpdate] = useState(false);
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://infinite-escarpment-16645.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [isDeleted, isUpdate])
@@ -16,7 +16,7 @@ const ManageOrders = () => {
     const handleUpdateStatus = id => {
         setIsUpdate(false);
         const updatedStatus = { status: 'Approved' };
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://infinite-escarpment-16645.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -38,7 +38,7 @@ const ManageOrders = () => {
         setIsDeleted(false);
         const proceed = window.confirm('Are you sure! You want to Cancel and  Delete?');
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://infinite-escarpment-16645.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

@@ -18,7 +18,7 @@ const DetailsProduct = () => {
 
     // display product details
     useEffect(() => {
-        const url = `http://localhost:5000/details/${productId}`;
+        const url = `https://infinite-escarpment-16645.herokuapp.com/details/${productId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
@@ -30,7 +30,7 @@ const DetailsProduct = () => {
         const { phone, address, shipping, userName } = data;
         const orderInfo = { email, img, name, description, price, status, userName, phone, address, shipping };
         // console.log(orderInfo);
-        axios.post('http://localhost:5000/orders', orderInfo)
+        axios.post('https://infinite-escarpment-16645.herokuapp.com/orders', orderInfo)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Order Successfully Added');
