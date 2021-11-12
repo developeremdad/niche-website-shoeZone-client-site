@@ -31,9 +31,11 @@ const MakeAdmin = () => {
     return (
         <div>
             <div style={formBg} className="mx-auto form-container my-4">
+                <h2 className="text-warning">Make A New Admin</h2>
+                <hr className="border" />
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <input className="form-control my-3" {...register("email")} required placeholder="Enter Email" />
-                    <button className="btn btn-primary w-100" type="submit">Make Admin</button>
+                    <input className="form-control my-3 bg-light" {...register("email")} required placeholder="Enter Email" />
+                    <button className="btn btn-dark w-100 border border-danger" type="submit"><span><i className="fas fa-user-plus text-warning"></i></span> Make Admin</button>
                 </form>
             </div>
         </div>
