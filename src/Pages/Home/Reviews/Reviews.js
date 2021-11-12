@@ -25,7 +25,7 @@ const Reviews = () => {
                                 reviews.map(review => <Col
                                     key={review?._id}
                                 >
-                                    <Card>
+                                    <Card className="border border-dark">
                                         <Card.Header style={{ color: '#87b106', fontSize: '20px', backgroundColor: '#000' }}>Website Review ({Math.floor(Math.random() * 100)}) <span><i className="fas fa-users text-primary"></i></span> </Card.Header>
                                         <Card.Body className="text-start">
                                             <Card.Title><span><i className="fas fa-user text-primary"></i></span> {review?.userName.toUpperCase()}</Card.Title>

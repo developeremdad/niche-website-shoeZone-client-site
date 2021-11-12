@@ -24,7 +24,7 @@ const Dashboard = () => {
         handleLogOut()
         history.push('/home');
     }
-    let { path, url } = useRouteMatch();
+    const { path, url } = useRouteMatch();
     return (
         <div>
             <div style={{ backgroundColor: '#003452', margin: '0' }} className="w-100 row">
