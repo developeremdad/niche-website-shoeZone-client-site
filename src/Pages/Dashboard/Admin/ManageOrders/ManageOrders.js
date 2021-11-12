@@ -59,7 +59,9 @@ const ManageOrders = () => {
                     orders.length
                         ?
                         orders.map(order => (
-                            <div className="container mx-auto row manage-container py-3 ">
+                            <div
+                                key={order._id}
+                                className="container mx-auto row manage-container py-3 ">
                                 <div className="col-lg-5 col-md-5 col-12">
                                     <p className="text-primary fs-5"><span><i className="fas fa-tag me-2 text-dark"></i></span>{order?.name}</p>
                                     <p><span><i className="fas fa-envelope me-2"></i></span>{order?.email}</p>

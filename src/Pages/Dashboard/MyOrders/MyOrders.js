@@ -39,7 +39,7 @@ const MyOrders = () => {
                             :
                             <div>
                                 <h2 className="text-center text-warning">Order Not Found</h2>
-                                <h2 className="text-center text-success">Please Order A New Product</h2>
+                                <h2 className="text-center text-success">Please Order Some Product</h2>
                             </div>
                     }
                 </div>
