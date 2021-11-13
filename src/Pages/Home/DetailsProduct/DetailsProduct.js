@@ -109,26 +109,26 @@ const DetailsProduct = () => {
                 <hr className="w-50 " />
 
                 <div className="my-5">
-                    <h3>Included/Exclude</h3>
+                    <h3>Included</h3>
                     <div className="row mt-3">
                         <div className="col-lg-6 col-md-6 col-12 text-color">
-                            <p><span><i className="fas fa-check me-3"></i></span>Pick and Drop Services</p>
-                            <p><span><i className="fas fa-check me-3"></i></span>1 Meal Per Day</p>
-                            <p><span><i className="fas fa-check me-3"></i></span>Cruise Dinner & Music Event</p>
-                            <p><span><i className="fas fa-check me-3"></i></span>Visit 7 Best Places in the City With Group</p>
+                            <p><span><i className="fas fa-check me-3"></i></span>Adjustable</p>
+                            <p><span><i className="fas fa-check me-3"></i></span>Stable</p>
+                            <p><span><i className="fas fa-check me-3"></i></span>Roomy enough</p>
+                            <p><span><i className="fas fa-check me-3"></i></span>In good condition</p>
                         </div>
                         <div className="col-lg-6 col-md-6 col-12 text-color">
-                            <p><span><i className="fas fa-times me-3 text-danger"></i></span>Additional Services</p>
-                            <p><span><i className="fas fa-times me-3 text-danger"></i></span>2 Meal Per Day</p>
-                            <p><span><i className="fas fa-times me-3 text-danger"></i></span>Insurance</p>
-                            <p><span><i className="fas fa-times me-3 text-danger"></i></span>Food & Drinks</p>
+                            <p><span><i className="fas fa-times me-3 text-danger"></i></span>Additional Discuount</p>
+                            <p><span><i className="fas fa-times me-3 text-danger"></i></span>100% guaranty</p>
+                            <p><span><i className="fas fa-times me-3 text-danger"></i></span>Money Back</p>
+                            <p><span><i className="fas fa-times me-3 text-danger"></i></span>Repiar</p>
                         </div>
                     </div>
                 </div>
 
-                {/* Tour location section  */}
+                {/* shop location section  */}
                 <div className="my-5">
-                    <h2 className="mb-4">TOUR LOCATION</h2>
+                    <h2 className="mb-4">SHOP LOCATION</h2>
                     <div>
                         <iframe title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7306.003958355313!2d90.42967377311696!3d23.711623361579026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9cc7d566d03%3A0x2472a49ac0504cd2!2sJatra%20Bari%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1634736049062!5m2!1sen!2sbd" width="100%" style={{ border: 0, height: "360px" }} allowFullScreen="" loading="lazy"></iframe>
                     </div>

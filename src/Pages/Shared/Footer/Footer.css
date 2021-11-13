@@ -8,6 +8,14 @@
 .ftr-border{
     border-bottom: 1px dotted #999999;
 }
+.link-text{
+    transition: .4s;
+}
+.link-text:hover{
+    color: #87b106;
+    margin-left: 10px;
+    font-weight: bold;
+}
 
 .footer-bottom{
     background-color: #000;
@@ -15,7 +23,7 @@
 }
 
 .footer-icon{
-    color: #999999;
+    color: #87b106;
     padding: 5px;
     margin: 5px;
     border-radius: 5px;

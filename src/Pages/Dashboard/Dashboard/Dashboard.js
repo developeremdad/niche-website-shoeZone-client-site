@@ -16,6 +16,7 @@ import ManageProducts from '../Admin/ManageProducts/ManageProducts';
 import AddProduct from '../Admin/AddProduct/AddProduct';
 import MakeAdmin from '../Admin/MakeAdmin/MakeAdmin';
 import Footer from '../../Shared/Footer/Footer';
+import User from '../User/User';
 
 const Dashboard = () => {
     const { user, handleLogOut } = useAuth();
@@ -92,7 +93,7 @@ const Dashboard = () => {
                 <div className="col-lg-10 col-md-10 col-10 bg-light px-0 text-start">
                     <Switch>
                         <Route exact path={path}>
-                            <h1>This is Dashboard</h1>
+                            <User></User>
                         </Route>
                         <Route path={`${path}/pay`}>
                             <Pay />
