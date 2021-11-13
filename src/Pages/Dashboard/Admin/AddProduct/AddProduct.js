@@ -29,7 +29,7 @@ const AddProduct = () => {
             })
     }
     return (
-        <div>
+        <div style={{ width: '100%', minHeight: '100vh' }}>
             <div style={formBg} className="mx-auto form-container my-4">
                 <h2 className="text-start text-warning">Add Product</h2>
                 <p className="text-start text-white">Please fill in this form to insert a new Product!</p>

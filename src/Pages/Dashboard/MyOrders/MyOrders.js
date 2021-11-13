@@ -23,7 +23,7 @@ const MyOrders = () => {
     }
 
     return (
-        <div>
+        <div style={{ width: '100%', minHeight: '100vh' }}>
             <div className="bg-light">
                 <div className=" mx-auto row g-4 mt-1">
                     {

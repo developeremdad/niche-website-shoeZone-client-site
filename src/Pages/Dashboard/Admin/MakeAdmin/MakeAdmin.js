@@ -35,7 +35,7 @@ const MakeAdmin = () => {
             })
     }
     return (
-        <div>
+        <div style={{ width: '100%', minHeight: '100vh' }}>
             <div style={formBg} className="mx-auto form-container my-4">
                 <h2 className="text-warning">Make A New Admin</h2>
                 <hr className="border" />

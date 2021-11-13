@@ -31,7 +31,7 @@ const ReviewAdd = () => {
             })
     }
     return (
-        <div>
+        <div style={{ width: '100%', minHeight: '100vh' }}>
             <div className="py-4">
                 <div style={reviewBg} className="mx-auto form-container my-4">
                     <h2 className="text-start text-white">Review <span className="text-danger">!!!</span></h2>

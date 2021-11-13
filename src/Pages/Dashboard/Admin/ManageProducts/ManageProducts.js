@@ -47,7 +47,7 @@ const ManageProducts = () => {
 
     }
     return (
-        <div className="my-2">
+        <div style={{ width: '100%', minHeight: '100vh' }} className="my-2">
             <div className="row mx-auto">
                 {
                     products.map(product => <ManageProduct
