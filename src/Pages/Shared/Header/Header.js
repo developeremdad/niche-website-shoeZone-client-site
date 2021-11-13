@@ -44,7 +44,7 @@ const Header = () => {
                             {
                                 user.email ?
                                     <span className="nav-item user-part">
-                                        <span className="me-3 fw-bold text-danger">{user.displayName}</span>
+                                        {/* <span className="me-3 fw-bold text-danger">{user.displayName}</span> */}
                                         <button className="text-center" onClick={handleLogOut} style={loginBtn}>Logout <i className="fas fa-sign-out-alt"></i></button>
                                         <span className="nav-item">
                                             {

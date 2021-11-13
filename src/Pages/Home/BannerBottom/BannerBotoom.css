@@ -1,0 +1,22 @@
+.banner-icon{
+    background-color: #87b106;
+}
+.box-items{
+    background-color: #fff;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+.bannerBottom-container{
+    margin-top: -100px;
+    z-index: 9999;
+}
+
+/* mobile responsive media query  */
+@media only screen and (max-width: 688px) {
+    .bannerBottom-container{
+        margin-top: 10px;
+    }
+    .submit-btn{
+        padding: 4px 10px;
+    }
+}

@@ -9,7 +9,7 @@ const BannerTop = () => {
     }
     return (
         <div>
-            <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
+            <div style={{ zIndex: '-9999' }} id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -35,7 +35,7 @@ const BannerTop = () => {
                     <div className="carousel-item">
                         <img src={`https://i.ibb.co/YZz2TwJ/slide3.jpg`} className="d-block w-100" alt="slide3" />
                         <div className="carousel-caption d-none d-md-block carusel-contect">
-                            <h1 className="carusel-title">Sale</h1>
+                            <h1 className="carusel-title">Look</h1>
                             <p className="carusel-caption">Running Sneakers Men's like plex</p>
                             <button className="explore-btn mt-5">Explore Now</button>
                         </div>
@@ -50,7 +50,7 @@ const BannerTop = () => {
                     <span className="visually-hidden">Next</span>
                 </button>
             </div>
-        </div>
+        </div >
     );
 };
 

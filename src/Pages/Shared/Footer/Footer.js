@@ -5,6 +5,15 @@ import './Footer.css';
 const Footer = () => {
     return (
         <div className="footer-container">
+            <div className="text-center">
+                <h3 className="text-white">JOIN OUR NEWSLETTER</h3>
+                <div className="py-3 px-2">
+                    <label htmlFor="#"><input type="email" name="email" placeholder="Enter your email" id="subscribe-email" /></label>
+                    <button className="subscribe-btn">Subscribe</button>
+                </div>
+                <p className="text-color fw-bold">To get the latest news from us please subscribe your email.</p>
+            </div>
+            <hr className="border my-4" />
             <div className="container mx-auto row text-white py-4 text-start">
                 <div className="col-lg-3 col-md-6 col-12">
                     <h5 className="mb-4">About Us</h5>

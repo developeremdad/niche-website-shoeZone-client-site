@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Row, Spinner } from 'react-bootstrap';
 import Product from '../Product/Product';
+import bg from '../../../images/product-cover.png';
 
+
+const bgCover = {
+    background: `url(${bg})`,
+    backgroundColor: 'rgba(0, 0, 0, 0.80)',
+    backgroundPosition: 'center top',
+    backgroundBlendMode: 'darken, luminosity',
+}
 const Products = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
@@ -11,9 +19,9 @@ const Products = () => {
     }, [])
     return (
         <div>
-            <div className="container py-4 text-center my-4">
-                <h1 className="text-danger">FEATURED PRODUCTS</h1>
-                <p>Find your next product</p>
+            <div style={bgCover} className="py-5 text-center my-4">
+                <h1 style={{ color: '#87b106', marginBottom: '15px' }} >NEW ARRIVALS PRODUCTS</h1>
+                <p className="text-color fs-5">Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius <br /> claritas est etiam processus dynamicus, qui sequitur mutationem.</p>
             </div>
 
             <div className="container">

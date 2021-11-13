@@ -1,11 +1,25 @@
 import React from 'react';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
+import bg from '../../../images/product-cover.png';
+import { NavLink } from 'react-router-dom';
 
+
+const bgCover = {
+    background: `url(${bg})`,
+    backgroundColor: 'rgba(0, 0, 0, 0.80)',
+    backgroundPosition: 'center top',
+    backgroundBlendMode: 'darken, luminosity',
+}
 const Contact = () => {
     return (
         <div>
             <Header />
+
+            <div style={bgCover} className="py-5 text-center mb-5">
+                <h1 style={{ color: '#87b106', marginBottom: '15px' }} >CONTACT US</h1>
+                <p className="text-color fw-bold  fs-5"> <NavLink className="text-decoration-none text-primary" to="/">Home   /   </NavLink>Contact Us</p>
+            </div>
             <div className="my-5">
                 <div className="container row gx-4 mx-auto">
                     <div className="col-lg-7 col-md-7 col-12">
