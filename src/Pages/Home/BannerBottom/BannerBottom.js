@@ -3,7 +3,7 @@ import './BannerBotoom.css';
 
 const BannerBottom = () => {
     return (
-        <div className="bannerBottom-container">
+        <div className="my-5">
             <div className="row container mx-auto g-4">
 
                 <div className="col-lg-3 col-md-6 col-12">

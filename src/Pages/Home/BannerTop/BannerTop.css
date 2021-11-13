@@ -2,6 +2,7 @@
     background-color: rgba(0, 0, 0, 0.3);
     margin-bottom: 120px;
     padding-bottom: 50px;
+    z-index: 999999 !important;
 }
 .carusel-title{
     color: rgb(251, 119, 96);

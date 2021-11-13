@@ -6,10 +6,6 @@
     box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
 
-.bannerBottom-container{
-    margin-top: -100px;
-    z-index: 9999;
-}
 
 /* mobile responsive media query  */
 @media only screen and (max-width: 688px) {
