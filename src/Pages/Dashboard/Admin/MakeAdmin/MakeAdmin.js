@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import swal from 'sweetalert';
 import bg from '../../../../images/loginBg.jpg';
 
 // background image
@@ -24,7 +25,12 @@ const MakeAdmin = () => {
             .then(data => {
                 if (data.modifiedCount > 0) {
                     reset();
-                    alert('Maked a new admin');
+                    swal({
+                        title: "Greate!",
+                        text: "Successfully Make A New Admin!",
+                        icon: "success",
+                        button: "Close",
+                    });
                 }
             })
     }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { Spinner } from 'react-bootstrap';
@@ -7,6 +7,7 @@ import useAuth from '../../Hooks/useAuth';
 import Header from '../../Shared/Header/Header';
 import ReactStars from 'react-stars'
 import './DetailsProduct.css';
+import swal from 'sweetalert';
 
 const DetailsProduct = () => {
     const { productId } = useParams();
@@ -15,6 +16,7 @@ const DetailsProduct = () => {
     const status = 'Pending';
     const [product, setProduct] = useState({});
     const { img, name, description, price, rating } = product;
+    const history = useHistory();
 
     // display product details
     useEffect(() => {
@@ -33,7 +35,13 @@ const DetailsProduct = () => {
         axios.post('https://infinite-escarpment-16645.herokuapp.com/orders', orderInfo)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('Order Successfully Added');
+                    swal({
+                        title: "Good Job!",
+                        text: "Thanks For Your Order!",
+                        icon: "success",
+                        button: "Go Home",
+                    });
+                    history.push('/home');
                     reset();
                 }
             })

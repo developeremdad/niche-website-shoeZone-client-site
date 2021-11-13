@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import swal from 'sweetalert';
 
 const MyOrder = (props) => {
     const { name, img, price, _id, status } = props.order;
@@ -13,21 +14,36 @@ const MyOrder = (props) => {
     // handle delete or cencel order fuction 
     const handleCancelOrder = id => {
         props.handleCheckIsDelted(false);
-        const proceed = window.confirm('Are you sure! You want to Cancel and  Delete?');
-        if (proceed) {
-            const url = `https://infinite-escarpment-16645.herokuapp.com/orders/${id}`;
-            fetch(url, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0) {
-                        const restOrders = orders.filter(order => order._id !== id);
-                        setOrders(restOrders);
-                        props.handleCheckIsDelted(true);
-                    }
-                });
-        }
+
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover your order!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    const url = `https://infinite-escarpment-16645.herokuapp.com/orders/${id}`;
+                    fetch(url, {
+                        method: 'DELETE'
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.deletedCount > 0) {
+                                const restOrders = orders.filter(order => order._id !== id);
+                                setOrders(restOrders);
+                                props.handleCheckIsDelted(true);
+                            }
+                        });
+                    swal("Opps! Your order is deleted ):", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Your order is safe!");
+                }
+            });
+
     }
     return (
 

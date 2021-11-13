@@ -1,6 +1,6 @@
 # Niche Product Website
 
-This website is good news for product lovers 😊😊😊
+This website is good news for Fashion lovers 😊😊😊
 
 ### Live Site Link: https://shoezone-101.web.app/
 

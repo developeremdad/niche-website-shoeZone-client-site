@@ -87,7 +87,9 @@ const Dashboard = () => {
                             </ul>
                     }
                 </div>
-                <div className="col-lg-10 col-md-10 col-10 bg-light text-start">
+
+                {/* dashboard components show */}
+                <div className="col-lg-10 col-md-10 col-10 bg-light px-0 text-start">
                     <Switch>
                         <Route exact path={path}>
                             <h1>This is Dashboard</h1>

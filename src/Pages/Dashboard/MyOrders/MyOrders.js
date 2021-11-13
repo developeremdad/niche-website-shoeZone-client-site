@@ -24,8 +24,8 @@ const MyOrders = () => {
 
     return (
         <div>
-            <div className="bg-light py-5 my-4">
-                <div className=" mx-auto row g-4">
+            <div className="bg-light">
+                <div className=" mx-auto row g-4 mt-1">
                     {
                         orders.length
                             ?

@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
+import swal from 'sweetalert';
 import bg from '../../../../images/loginBg.jpg';
 
 
@@ -17,7 +18,12 @@ const AddProduct = () => {
         axios.post('https://infinite-escarpment-16645.herokuapp.com/products', data)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('Product Successfully inserted');
+                    swal({
+                        title: "Greate!",
+                        text: "Product Successfully Added!",
+                        icon: "success",
+                        button: "Close",
+                    });
                     reset();
                 }
             })

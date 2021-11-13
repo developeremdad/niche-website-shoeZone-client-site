@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../Hooks/useAuth';
 import bg from '../../../images/loginBg.jpg';
+import swal from 'sweetalert';
 
 // background image
 const reviewBg = {
@@ -19,7 +20,12 @@ const ReviewAdd = () => {
         axios.post('https://infinite-escarpment-16645.herokuapp.com/reviews', data)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('Review Successfully Added');
+                    swal({
+                        title: "Thank You!",
+                        text: "Review Successfully Inseted!",
+                        icon: "success",
+                        button: "Close",
+                    });
                     reset();
                 }
             })

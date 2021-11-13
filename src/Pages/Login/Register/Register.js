@@ -6,6 +6,7 @@ import useAuth from '../../Hooks/useAuth';
 import Header from '../../Shared/Header/Header';
 import Footer from '../../Shared/Footer/Footer';
 import bg from '../../../images/loginBg.jpg';
+import swal from 'sweetalert';
 
 
 const registerBg = {
@@ -37,7 +38,12 @@ const Register = () => {
     const handleRegisterSubmit = (data) => {
         const { name, email, password, password1 } = data;
         if (password !== password1) {
-            alert('Your password did not match');
+            swal({
+                title: "Greate!",
+                text: "Product Successfully  Added!",
+                icon: "warning",
+                button: "Try again",
+            });
             return
         }
         handleCreateNewUser(email, password, name, history);
