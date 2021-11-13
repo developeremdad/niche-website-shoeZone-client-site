@@ -16,7 +16,7 @@ const About = () => {
                     <hr className="border border-dark" />
                     <p className="text-color fw-bold"><span><i className="fas fa-home me-2"></i></span> Manchester Road 123-78B, Silictown 7854MD</p>
                     <p className="text-color fw-bold"><span><i className="fas fa-phone-alt me-2"></i></span> Phone: +46 123 456 789</p>
-                    <p className="text-color fw-bold"> <span><i className="fas fa-envelope me-2"></i></span> Email: hello@sitename.com</p>
+                    <p className="text-color fw-bold"> <span><i className="fas fa-envelope me-2"></i></span> Email: admin@hotmail.com</p>
                 </div>
             </div>
         </div>

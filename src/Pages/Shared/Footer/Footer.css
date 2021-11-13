@@ -36,7 +36,7 @@
     border-bottom: 1px dotted #999999;
 }
 .link-text{
-    transition: .4s;
+    transition: .2s;
 }
 .link-text:hover{
     color: #87b106;

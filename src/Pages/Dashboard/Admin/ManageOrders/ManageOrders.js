@@ -70,7 +70,7 @@ const ManageOrders = () => {
     }
     return (
         <div style={{ width: '100%', minHeight: '100vh' }}>
-            <div className="bg-light mt-1 p-1">
+            <div className="bg-light mt-1 p-2">
                 {
                     orders.length
                         ?
